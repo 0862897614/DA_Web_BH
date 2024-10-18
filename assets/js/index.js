@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Khởi tạo slider tự động di chuyển
   initAutoSlider();
+
+  // Khởi tạo bx-shopping-bag
+  initShoppingBags();
 });
 
 // Hàm thiết lập nút cuộn lên đầu trang
@@ -165,46 +168,68 @@ function initAutoSlider() {
     moveSlider(currentIndex);
     resetAutoSlide();
   });
+}
 
-  // overplay
-  const overlay = document.querySelector(".overlay");
-  const menuList = document.querySelectorAll(".menu ul li, .others ul .icon1");
+// Hàm khởi tạo bx-shopping-bag
+function initShoppingBags() {
+  const shoppingBags = document.querySelectorAll(".bx-shopping-bag");
 
-  menuList.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      overlay.style.opacity = "1";
-      overlay.style.pointerEvents = "auto";
-    });
-    item.addEventListener("mouseleave", () => {
-      overlay.style.opacity = "0";
-      overlay.style.pointerEvents = "none";
-    });
-  });
-  // Lấy tất cả các khối home-new-prd
-  document.querySelectorAll(".home-new-prd").forEach((section) => {
-    // Lấy tất cả các tab và product-list trong khối hiện tại
-    const tabs = section.querySelectorAll(".tab");
-    const productLists = section.querySelectorAll(".product-list");
+  shoppingBags.forEach((bag) => {
+    bag.addEventListener("click", () => {
+      const listSize = bag.querySelector(".list-size");
+      const isActive = bag.classList.toggle("active");
 
-    // Duyệt qua từng tab và thêm sự kiện click
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        // Bỏ class active khỏi tất cả các tab trong khối hiện tại
-        tabs.forEach((t) => t.classList.remove("active"));
-
-        // Thêm class active vào tab vừa được click
-        tab.classList.add("active");
-
-        // Ẩn tất cả các product list trong khối hiện tại
-        productLists.forEach((list) => list.classList.remove("active"));
-
-        // Hiển thị product list tương ứng với tab được click
-        const target = tab.getAttribute("data-target");
-        const activeProductList = section.querySelector(`#${target}`);
-        if (activeProductList) {
-          activeProductList.classList.add("active");
+      // Ẩn tất cả danh sách kích thước và bỏ active cho các phần tử khác
+      shoppingBags.forEach((b) => {
+        if (b !== bag) {
+          const otherListSize = b.querySelector(".list-size");
+          if (otherListSize) {
+            otherListSize.classList.remove("active"); // Ẩn danh sách kích thước
+          }
+          b.classList.remove("active"); // Bỏ active cho phần tử khác
         }
       });
+
+      // Chỉ hiển thị danh sách kích thước nếu phần tử hiện tại đang active
+      if (isActive && listSize) {
+        listSize.classList.add("active"); // Hiển thị danh sách kích thước
+      } else if (listSize) {
+        listSize.classList.remove("active"); // Ẩn danh sách nếu không active
+      }
     });
   });
 }
+
+// Overplay effect cho menu
+document.querySelectorAll(".home-new-prd").forEach((section) => {
+  const tabs = section.querySelectorAll(".tab");
+  const productLists = section.querySelectorAll(".product-list");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      productLists.forEach((list) => list.classList.remove("active"));
+      const target = tab.getAttribute("data-target");
+      const activeProductList = section.querySelector(`#${target}`);
+      if (activeProductList) {
+        activeProductList.classList.add("active");
+      }
+    });
+  });
+});
+
+const overlay = document.querySelector(".overlay");
+const menuList = document.querySelectorAll(".menu ul li, .others ul .icon1");
+
+menuList.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    overlay.style.opacity = "1";
+    overlay.style.pointerEvents = "auto";
+  });
+  item.addEventListener("mouseleave", () => {
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+  });
+});

@@ -1,4 +1,4 @@
- <!-- home-new-product 1-->
+  <!-- home-new-product 1-->
     <section class="home-new-prd" data-id="1">
       <div class="main-content">
         <div class="title-section">THÁNG CỦA NÀNG - SALE 30% ALL ITEMS</div>
@@ -49,7 +49,27 @@
                   <div class="price-prd">
                     <span>1.393.000đ</span>
                     <span>1.990.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -57,7 +77,7 @@
               <!-- prd2 -->
               <div class="product">
                 <div class="info-ticket ticket-news">new</div>
-            <div class="badget ivymoda"><span>-30<span>%</span></span></div>
+              <div class="badget ivymoda"><span>-30<span>%</span></span></div>
                 <div class="thumb_prd">
                   <a href="">
                     <img src="assets/img/prd1-2.webp" alt="" class="owl-lazy" />
@@ -87,7 +107,7 @@
                   <div class="price-prd">
                     <span>1.603.000đ</span>
                     <span>2.290.000đ</span>
-                     <div class="bx bx-shopping-bag">
+                      <div class="bx bx-shopping-bag">
                       <div class="list-size">
                         <ul>
                           <li>
@@ -149,7 +169,27 @@
                   <div class="price-prd">
                     <span>693.000đ</span>
                     <span>990.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,7 +241,27 @@
                   <div class="price-prd">
                      <span>1.813.000đ</span>
                     <span>2.590.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                     <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -238,7 +298,27 @@
                   <div class="price-prd">
                     <span>1.743.000đ</span>
                     <span>2.490.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                     <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -275,7 +355,27 @@
                   <div class="price-prd">
                     <span>1.533.000đ</span>
                     <span>2.190.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -312,7 +412,7 @@
                   <div class="price-prd">
                     <span>1.393.000đ</span>
                     <span>1.990.000đ</span>
-                    <div class="bx bx-shopping-bag">
+                     <div class="bx bx-shopping-bag">
                       <div class="list-size">
                         <ul>
                           <li>
@@ -365,14 +465,14 @@
                 <div class="info_prd">
                   <div class="list-color">
                     <ul>
-                      <li >
+                      <li  class="checked">
                         <a href="">
-                          <img src="../assets/img/color-2-3.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);" />
+                          <img src="./assets/img/color-2-3.png" alt=""  />
                         </a>
                       </li>
-                      <li class="checked">
+                      <li>
                         <a href="">
-                          <img src="./assets/img/color-1-3.png" alt="" />
+                          <img src="./assets/img/color-1-3.png" alt="" style="border: 1px solid rgba(0, 0, 0, 0.2);"/>
                         </a>
                       </li>
                     </ul>
@@ -386,7 +486,27 @@
                   <div class="price-prd">
                     <span>375.000đ</span>
                     <span>750.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -428,7 +548,27 @@
                   <div class="price-prd">
                     <span>375.000đ</span>
                     <span>750.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                     <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -467,7 +607,27 @@
                   <div class="price-prd">
                     <span>349.000đ</span>
                     <span>699.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                     <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -508,7 +668,27 @@
                   <div class="price-prd">
                     <span>375.000đ</span>
                     <span>750.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -549,7 +729,27 @@
                   <div class="price-prd">
                     <span>375.000đ</span>
                     <span>750.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -590,7 +790,27 @@
                   <div class="price-prd">
                     <span>349.000đ</span>
                     <span>699.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -631,7 +851,27 @@
                   <div class="price-prd">
                     <span>375.000đ</span>
                     <span>750.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -710,7 +950,27 @@
                   <div class="price-prd">
                     <span>595.000đ</span>
                     <span>850.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -753,7 +1013,27 @@
                   <div class="price-prd">
                     <span>1.323.000đ</span>
                     <span>1.090.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -790,7 +1070,27 @@
                   <div class="price-prd">
                     <span>1.533.000đ</span>
                     <span>2.190.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -832,7 +1132,27 @@
                   <div class="price-prd">
                     <span>1.743.000đ</span>
                     <span>2.490.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -874,7 +1194,27 @@
                   <div class="price-prd">
                     <span>1.253.000đ</span>
                     <span>1.790.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -921,7 +1261,27 @@
                   <div class="price-prd">
                     <span>763.000đ</span>
                     <span>1.090.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -968,7 +1328,27 @@
                   <div class="price-prd">
                     <span>1.533.000đ</span>
                     <span>2.1290.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1015,7 +1395,27 @@
                   </h3>
                   <div class="price-prd">
                     <span>1.290.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1051,7 +1451,27 @@
                   </h3>
                   <div class="price-prd">
                     <span>1.690.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1089,7 +1509,27 @@
                   </h3>
                   <div class="price-prd">
                     <span>623.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1125,7 +1565,27 @@
                   <div class="price-prd">
                     <span>850.000đ</span>
                     <span>1.250.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1161,7 +1621,27 @@
                   <div class="price-prd">
                     <span>489.300đ</span>
                     <span>699.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1202,7 +1682,27 @@
                   <div class="price-prd">
                     <span>973.000đ</span>
                     <span>1.390.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1243,7 +1743,27 @@
                   <div class="price-prd">
                     <span>973.000đ</span>
                     <span>1.390.000đ</span>
-                    <div class="bx bx-shopping-bag"></div>
+                    <div class="bx bx-shopping-bag">
+                      <div class="list-size">
+                        <ul>
+                          <li>
+                            <button>s</button>
+                          </li>
+                          <li>
+                            <button>m</button>
+                          </li>
+                          <li>
+                            <button>l</button>
+                          </li>
+                          <li>
+                            <button>xl</button>
+                          </li>
+                          <li>
+                            <button>xxl</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1264,4 +1784,3 @@
         </div>
       </div>
     </section>
-
