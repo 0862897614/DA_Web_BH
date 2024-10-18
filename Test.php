@@ -26,23 +26,21 @@
       rel="stylesheet"
     />
 
+    <!-- đường dẫn cơ sở -->
+    <base href="http://localhost/Doan_Web/">
+
     <!-- style, js -->
-    <link rel="stylesheet" href="assets/style.css" />
-    <script src="assets/js/index.js"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/js/index.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <?php 
-      // <!-- header -->
-      include("pages/header.php");
-      // <!-- slide-show -->
-      include("pages/slideShow.php");
-      // <!-- home-new-product 1-->
-      include("pages/homeProduct.php");
-      // <!-- home-promote -->
-      include("pages/homePromote.php");
-      // <!-- footer -->
-      include("pages/footer.php");
+        include("pages/header.php");
+        include("pages/slideShow.php");
+        include("pages/homeProduct.php");
+        include("pages/homePromote.php");
+        include("pages/footer.php");
       ?>
       <div class="overlay"></div>
     </div>

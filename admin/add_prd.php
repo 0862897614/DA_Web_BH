@@ -1,3 +1,4 @@
+
 <?php
 // Kiểm tra sự tồn tại của file connect.php
 if (file_exists("../config/connect.php")) {

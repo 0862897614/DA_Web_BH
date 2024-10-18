@@ -1,4 +1,4 @@
- <section class="slide-show">
+<section class="slide-show">
       <div class="main-content">
         <div class="nav-info">
           <div class="left-info">
@@ -18,11 +18,13 @@
         <div class="wrapper">
           <div class="list-images">
             <div class="mySlides">
-              <img
-                src="./assets/img/banner-3.webp"
-                alt="Slide 1"
-                class="thumb"
-              />
+              <a href="../lookbook/info.php">
+                <img
+                  src="./assets/img/banner-3.webp"
+                  alt="Slide 1"
+                  class="thumb"
+                />
+              </a>
             </div>
             <div class="mySlides">
               <img

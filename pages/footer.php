@@ -1,4 +1,5 @@
-   <section class="footer">
+ 
+       <section class="footer">
       <div class="main-content">
         <div class="movetotop-content">
           <div class="movetotop">
@@ -10,32 +11,32 @@
           <div class="left-footer">
             <div class="logo">
               <a href="">
-                <img src="./assets/icon/logo-footer.png" alt="" />
+                <img src="assets/icon/logo-footer.png" alt="" />
               </a>
             </div>
             <div class="list-social">
               <a href="">
                 <img
-                  src="./assets/icon/ic_fb.svg"
+                  src="assets/icon/ic_fb.svg"
                   alt=""
                   style="height: 28px"
                 />
               </a>
               <a href="">
                 <img
-                  src="./assets/icon/ic_gg.svg"
+                  src="assets/icon/ic_gg.svg"
                   alt=""
                   style="height: 28px"
                 />
               </a>
               <a href="">
-                <img src="./assets/icon/ic_instagram.svg" alt="" />
+                <img src="assets/icon/ic_instagram.svg" alt="" />
               </a>
               <a href="">
-                <img src="./assets/icon/ic_pinterest.svg" alt="" />
+                <img src="assets/icon/ic_pinterest.svg" alt="" />
               </a>
               <a href="">
-                <img src="./assets/icon/ic_ytb.svg" alt="" />
+                <img src="assets/icon/ic_ytb.svg" alt="" />
               </a>
             </div>
             <div class="hotline">
@@ -135,12 +136,12 @@
               <ul>
                 <li>
                   <a href="">
-                    <img src="./assets/icon/appstore.png" alt="" />
+                    <img src="assets/icon/appstore.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="">
-                    <img src="./assets/icon/googleplay.png" alt="" />
+                    <img src="assets/icon/googleplay.png" alt="" />
                   </a>
                 </li>
               </ul>

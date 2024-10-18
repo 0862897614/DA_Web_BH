@@ -1,4 +1,4 @@
- <header class="header fixed">
+<header class="header fixed">
       <div class="main-content">
         <div class="body-header">
           <div class="menu">
@@ -272,12 +272,10 @@
                 <i class="fas fa-search"></i>
                 <div class="quick-search">
                   <div class="items-search">
-                    <h4 class="title-seach">
-                      Tìm kiếm nhiều nhất
-                    </h4>
-                    <div class="item-side-size " >
+                    <h4 class="title-seach">Tìm kiếm nhiều nhất</h4>
+                    <div class="item-side-size">
                       <label for="" class="item-sub-list">
-                        <a href="" class="item-sub-title" >Đầm</a>
+                        <a href="" class="item-sub-title">Đầm</a>
                       </label>
                       <label for="" class="item-sub-list">
                         <a href="" class="item-sub-title">Trễ vai</a>
