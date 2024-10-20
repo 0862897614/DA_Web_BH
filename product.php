@@ -546,7 +546,7 @@
                 <li class="exclusive-tab">IVY Secret</li>
               </ul>
             </div>
-            <div class="exclusive-content exclusive-inner">
+            <div class="exclusive-content exclusive-inner ">
                 <!-- Size áo -->
                 <div class="row">
                     <div class="column">
@@ -700,7 +700,7 @@
                     </div>
                 </div>
             </div>
-            <div class="exclusive-content exclusive-inner active">
+            <div class="exclusive-content exclusive-inner ">
               <!-- size áo -->
               <div class="row">
                 <div class="column">
@@ -854,7 +854,7 @@
                 </div>
               </div>
             </div>
-            <div class="exclusive-content exclusive-inner">
+            <div class="exclusive-content exclusive-inner ">
           <div class="row">
             <div class="column">
               <table>
@@ -953,15 +953,13 @@
             </div>
           </div>
             </div>
-            <div class="exclusive-content exclusive-inner">
+            <div class="exclusive-content exclusive-inner active">
               <div class="row">
                 <div class="column">
                   <thead>
                     <tr>
                       <th>BẢNG THÔNG SỐ KÍCH THƯỚC GIÀY NGƯỜI LỚN</th>
                     </tr>
-                  </thead>
-                  <thead>
                     <tr>
                       <th>Size theo Web</th>
                       <th>Chiều dài (cm)</th>
@@ -1018,12 +1016,12 @@
                 </div>
               </div>
             </div>
-            <div class="exclusive-content exclusive-inner">
+            <div class="exclusive-content exclusive-inner ">
               <div class="row">
                 <div class="column">
                   <thead>
                     <tr>
-                      <th>Bảng size quần lót IVY SECRET</th>
+                      <th>Bảng size quần IVY SECRET</th>
                     </tr>
                     <tr>
                       <th>Size</th>
