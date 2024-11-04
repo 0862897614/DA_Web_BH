@@ -448,7 +448,7 @@
             </div>
 
             <div class="link-prd">
-              <a href="" class="all-prd">Xem tất cả</a>
+              <a href="./category/product-new.php" class="all-prd">Xem tất cả</a>
             </div>
           </div>
         </div>
@@ -1341,11 +1341,9 @@
             </div>
 
             <div class="link-prd">
-              <a href="" class="all-prd">Xem tất cả</a>
+              <a href="./category/product-seller.php" class="all-prd">Xem tất cả</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-<script src="./assets/js/listSize.js"></script>

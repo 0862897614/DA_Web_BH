@@ -21,7 +21,7 @@
             <div class="mySlides">
               <a href="../lookbook/info.php">
                 <img
-                  src="./assets/img/banner-3.webp"
+                  src="./assets/img/banner-2.webp"
                   alt="Slide 1"
                   class="thumb"
                 />
@@ -29,7 +29,7 @@
             </div>
             <div class="mySlides">
               <img
-                src="./assets/img/banner-1.webp"
+                src="./assets/img/banner-4.webp"
                 alt="Slide 2"
                 class="thumb"
               />
@@ -43,7 +43,7 @@
             </div>
             <div class="mySlides">
               <img
-                src="./assets/img/banner-4.webp"
+                src="./assets/img/banner-6.webp"
                 alt="Slide 4"
                 class="thumb"
               />

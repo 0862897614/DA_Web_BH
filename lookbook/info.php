@@ -46,7 +46,7 @@
                 <a href="./home.php">Trang chủ</a>
               </li>
               <li class="breadcrumb_item">
-                <a href="">MUSE OF THE SUN</a>
+                <a href="./lookbook/info.php">MUSE OF THE SUN</a>
               </li>
             </ol>
           </div>
