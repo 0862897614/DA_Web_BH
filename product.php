@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="assets/style.css" />
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/listSize.js"></script>
+    <script src="./assets/js/addprd.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
                                 <li class="breadcrumb_item">
                                     <a href="product.php">Áo vest Tweed Kose</a>
                                 </li>
-                            </ol>
+                            </ol> 
                         </div>
                     </div>
                     <div class="product-detail_body">
@@ -164,7 +165,7 @@
                                     </div>
                                     <div class="product-detail__actions">
                                         <button class="btn btn--large add-to-cart-detail">Thêm vào giỏ</button>
-                                        <a href="">
+                                        <a href="Payment/cart.php">
                                             <button class="btn btn--large btn--outline">Mua hàng</button>
                                         </a>
                                         <button class="btn btn--large btn--outline btn--wishlist">

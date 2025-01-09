@@ -315,12 +315,25 @@
                 <a href="" class="fa-solid fa-headphones"></a>
               </li>
               <li class="icon3">
-                <a href="" class="fa fa-user"></a>
+                <a href="admin/login.php" class="fa fa-user"></a>
               </li>
               <li class="icon4">
                 <a href="" class="fa fa-shopping-bag">
                   <span class="number-cart">0</span>
                 </a>
+                <!-- <div class="sub-action sub-action-cart open">
+                  <div class="top-action">
+                    <h3>"Giỏ hàng"<span class="number-cart">1</span></h3>
+                  </div>
+                  <div class="main-action">
+                    <div class="item-product-cart">
+                      <div class="thumb-product-cart"></div>
+                      <div class="info-product-cart"></div>
+                    </div>
+                  </div>
+                  <div class="bottom-action"></div>
+                  <div class="action-close"></div>
+                </div> -->
               </li>
             </ul>
           </div>

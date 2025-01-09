@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    margin-top: 40px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid #dddd;
+    text-align: center;
+}
+
+.admin-content {
+    padding-top: 50px;
+    display: flex;
+}
+.admin-content-left {
+    background-color: #dddddd;
+    width: 20%;
+    padding: 30px 0 0 12px;
+}
+
+.admin-content-left > ul > li > a {
+    font-weight: bold;
+}
+
+.admin-content-left ul li {
+    margin: 6px 0 ;
+}
+
+.admin-content-left ul ul{
+    margin-left: 20px;
+}
+
+.admin-content-right {
+    width: 80%;
+    padding: 30px 30px 50px 40px;
+}
+
+.admin-content-right-product_add button,
+.admin-content-right-category_add button {
+    display: block;
+    margin-top: 15px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.admin-content-right-category_add input,
+.admin-content-right-category_add select {
+    height: 30px;
+    width: 200px;
+    padding-left: 12px;
+    margin-top: 15px;   
+    border: 1px solid #ccc;
+    border-radius: 4px;     
+    font-size: 14px;        
+    background-color: white; 
+}
+
+.admin-content-right-product_add button:hover,
+.admin-content-right-category_add button:hover {
+    background: transparent;
+    border: 1px solid brown;
+    color: brown;
+}
+
+/*----------- cartegory_list------------ */
+
+.admin-content-right-category_list table {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+    border-collapse: collapse;
+}
+
+.admin-content-right-category_list table tr {
+    height: 40px; /* Điều chỉnh chiều cao của các hàng */
+}
+
+.admin-content-right-category_list table th,td {
+    border: 1px solid #dddd;
+    padding: 10px;
+}
+/* ---Product---- */
+.admin-content-right-product_add h1 {
+    margin-bottom: 20px;
+}
+
+.admin-content-right-product_add textarea {
+    height: 200px;
+    width: 500px;
+    display: block;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; 
+    background-color: white;
+}
+
+.admin-content-right-product_add form label {
+    display: block;
+    margin-bottom: 5px; 
+}
+
+.admin-content-right-product_add form input,
+.admin-content-right-product_add form select{
+    height: 35px; /* Chiều cao các ô input */
+    width: 500px; /* Độ rộng các ô input */
+    padding: 8px; /* Khoảng cách nội dung bên trong */
+    margin-bottom: 20px; /* Khoảng cách dưới mỗi ô input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* Kích thước chữ */
+    background-color: white;
+}
+
