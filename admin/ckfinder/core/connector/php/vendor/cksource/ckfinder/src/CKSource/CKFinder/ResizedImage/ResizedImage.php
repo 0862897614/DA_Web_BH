@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckfinder/
- * Copyright (c) 2007-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * https://ckeditor.com/ckeditor-4/ckfinder/
+ * Copyright (c) 2007-2019, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -26,7 +26,7 @@ use CKSource\CKFinder\ResourceType\ResourceType;
  */
 class ResizedImage extends ResizedImageAbstract
 {
-    public const DIR = '__thumbs';
+    const DIR = '__thumbs';
 
     /**
      * @var ResizedImageRepository
@@ -34,29 +34,29 @@ class ResizedImage extends ResizedImageAbstract
     protected $resizedImageRepository;
 
     /**
-     * @var Image
+     * @var Image $image
      */
     protected $image;
 
     /**
-     * @var int
+     * @var int $width
      */
     protected $width;
 
     /**
-     * @var int
+     * @var int $height
      */
     protected $height;
 
     /**
-     * @var bool
+     * @var bool $requestedSizeIsValid
      */
     protected $requestedSizeIsValid = true;
 
     /**
      * A full source file path.
      *
-     * @var string
+     * @var string $sourceFileDir
      */
     protected $sourceFileDir;
 
@@ -81,6 +81,7 @@ class ResizedImage extends ResizedImageAbstract
 
         // Check if there's info about source image in cache
         $app = $this->resizedImageRepository->getContainer();
+
 
         if (!$forceRequestedSize) {
             $cacheKey = Path::combine($sourceFileResourceType->getName(), $sourceFileDir, $sourceFileName);
@@ -128,7 +129,7 @@ class ResizedImage extends ResizedImageAbstract
     {
         $pathInfo = pathinfo($fileName);
 
-        return sprintf('%s__%dx%d%s', $pathInfo['filename'], $width, $height, isset($pathInfo['extension']) ? '.'.$pathInfo['extension'] : '');
+        return sprintf("%s__%dx%d%s", $pathInfo['filename'], $width, $height, isset($pathInfo['extension']) ? '.' . $pathInfo['extension'] : '');
     }
 
     public static function getSizeFromFilename($resizedImageFileName)
@@ -137,11 +138,11 @@ class ResizedImage extends ResizedImageAbstract
 
         preg_match('/^.*__(\d+)x(\d+)$/', $pathInfo['filename'], $matches);
 
-        if (3 === \count($matches)) {
-            return [
-                'width' => (int) $matches[1],
-                'height' => (int) $matches[2],
-            ];
+        if (count($matches) === 3) {
+            return array(
+                'width'  => (int) $matches[1],
+                'height' => (int) $matches[2]
+            );
         }
 
         return null;
@@ -154,10 +155,9 @@ class ResizedImage extends ResizedImageAbstract
      */
     public function getDirectory()
     {
-        return Path::combine(
-            $this->sourceFileResourceType->getDirectory(),
+        return Path::combine($this->sourceFileResourceType->getDirectory(),
             $this->sourceFileDir,
-            self::DIR,
+            ResizedImage::DIR,
             $this->sourceFileName
         );
     }
@@ -192,7 +192,7 @@ class ResizedImage extends ResizedImageAbstract
     {
         $backend = $this->sourceFileResourceType->getBackend();
 
-        /*
+        /**
          * In case the requested size is bigger than the size of the original image,
          * the resized version was not created.
          * This is a fallback that returns the URL to the original image.
@@ -207,7 +207,7 @@ class ResizedImage extends ResizedImageAbstract
     /**
      * Checks if the size requested for the resized image is valid.
      *
-     * @return bool `true` if the requested size is valid
+     * @return bool `true` if the requested size is valid.
      */
     public function requestedSizeIsValid()
     {

@@ -1,7 +1,7 @@
 {
     "name": "symfony/http-foundation",
     "type": "library",
-    "description": "Defines an object-oriented layer for the HTTP specification",
+    "description": "Symfony HttpFoundation Component",
     "keywords": [],
     "homepage": "https://symfony.com",
     "license": "MIT",
@@ -16,29 +16,23 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
-        "symfony/polyfill-mbstring": "~1.1",
-        "symfony/polyfill-php83": "^1.27"
+        "php": ">=5.3.9",
+        "symfony/polyfill-mbstring": "~1.1"
     },
     "require-dev": {
-        "doctrine/dbal": "^3.6|^4",
-        "predis/predis": "^1.1|^2.0",
-        "symfony/cache": "^6.4|^7.0",
-        "symfony/dependency-injection": "^6.4|^7.0",
-        "symfony/http-kernel": "^6.4|^7.0",
-        "symfony/mime": "^6.4|^7.0",
-        "symfony/expression-language": "^6.4|^7.0",
-        "symfony/rate-limiter": "^6.4|^7.0"
-    },
-    "conflict": {
-        "doctrine/dbal": "<3.6",
-        "symfony/cache": "<6.4"
+        "symfony/expression-language": "~2.4"
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\HttpFoundation\\": "" },
+        "classmap": [ "Resources/stubs" ],
         "exclude-from-classmap": [
             "/Tests/"
         ]
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.7-dev"
+        }
+    }
 }

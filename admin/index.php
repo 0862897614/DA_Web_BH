@@ -1,5 +1,12 @@
+<?php
+include 'session.php'; // Bao gồm file quản lý session
+Session::checkSession(); // Kiểm tra trạng thái đăng nhập
+?>
+
+
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -177,11 +184,12 @@
         }
     </style>
 </head>
+
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
             <img src="../assets/img/logoadminpng.png" alt="Avatar">
-            <h2>Phạm Nghĩa</h2>
+            <h2>Pham Nghia</h2>
         </div>
         <ul class="sidebar-nav">
             <li><a href="dashboard.php">Dashboard</a></li>
@@ -196,7 +204,7 @@
         <header>
             <h1>Chào mừng đến với Quản trị</h1>
             <div class="header-actions">
-                <span class="username">Xin chào, <?php echo htmlspecialchars("PhamNghia"); ?></span>
+                <span class="username">Xin chào, <?php echo htmlspecialchars(Session::get("username")); ?></span>
                 <a href="logout.php"><button class="logout-btn">Đăng xuất</button></a>
             </div>
         </header>
@@ -224,18 +232,13 @@
             <div class="recent-activity">
                 <h2>Hoạt động gần đây</h2>
                 <ul>
-                    <li>
-                        <span>Đơn hàng #VN123</span> - Đã hoàn tất
-                    </li>
-                    <li>
-                        <span>Sản phẩm mới</span> - Đã thêm vào kho
-                    </li>
-                    <li>
-                        <span>Người dùng mới</span> - Đã đăng ký
-                    </li>
+                    <li><span>Đơn hàng #VN123</span> - Đã hoàn tất</li>
+                    <li><span>Sản phẩm mới</span> - Đã thêm vào kho</li>
+                    <li><span>Người dùng mới</span> - Đã đăng ký</li>
                 </ul>
             </div>
         </div>
     </div>
 </body>
+
 </html>

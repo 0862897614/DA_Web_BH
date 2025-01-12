@@ -1,4 +1,5 @@
 <?php
+    include 'auth.php';
     include "class/category_class.php";
     $category = new category;
     if(!isset($_GET['category_id']) || $_GET['category_id'] == NULL) {

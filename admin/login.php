@@ -1,7 +1,8 @@
 <?php
     include 'config.php';
-    include 'session.php';
     include "database.php";
+    include 'session.php';
+    Session::checkLogin(); 
 
     Session::checkLogin();
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {

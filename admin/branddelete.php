@@ -1,4 +1,5 @@
 <?php
+    include 'auth.php';
     include "class/brand_class.php";
     $brand = new brand;
     $brand_id = $_GET['brand_id'];

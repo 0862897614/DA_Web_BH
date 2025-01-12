@@ -31,7 +31,7 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
         'before_initiate'     => null,
         'before_upload'       => null,
         'before_complete'     => null,
-        'exception_class'     => MultipartUploadException::class,
+        'exception_class'     => 'Aws\Exception\MultipartUploadException',
     ];
 
     /** @var Client Client used for the upload. */
@@ -88,13 +88,13 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
      *
      * @return PromiseInterface
      */
-    public function promise(): PromiseInterface
+    public function promise()
     {
         if ($this->promise) {
             return $this->promise;
         }
 
-        return $this->promise = Promise\Coroutine::of(function () {
+        return $this->promise = Promise\coroutine(function () {
             // Initiate the upload.
             if ($this->state->isCompleted()) {
                 throw new \LogicException('This multipart upload has already '
@@ -137,29 +137,13 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
             // Complete the multipart upload.
             yield $this->execCommand('complete', $this->getCompleteParams());
             $this->state->setStatus(UploadState::COMPLETED);
-        })->otherwise($this->buildFailureCatch());
-    }
-
-    private function transformException($e)
-    {
-        // Throw errors from the operations as a specific Multipart error.
-        if ($e instanceof AwsException) {
-            $e = new $this->config['exception_class']($this->state, $e);
-        }
-        throw $e;
-    }
-
-    private function buildFailureCatch()
-    {
-        if (interface_exists("Throwable")) {
-            return function (\Throwable $e) {
-                return $this->transformException($e);
-            };
-        } else {
-            return function (\Exception $e) {
-                return $this->transformException($e);
-            };
-        }
+        })->otherwise(function (\Exception $e) {
+            // Throw errors from the operations as a specific Multipart error.
+            if ($e instanceof AwsException) {
+                $e = new $this->config['exception_class']($this->state, $e);
+            }
+            throw $e;
+        });
     }
 
     protected function getConfig()
@@ -218,8 +202,10 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
     /**
      * Based on the config and service-specific workflow info, creates a
      * `Promise` for an `UploadState` object.
+     *
+     * @return PromiseInterface A `Promise` that resolves to an `UploadState`.
      */
-    private function determineState(): UploadState
+    private function determineState()
     {
         // If the state was provided via config, then just use it.
         if ($this->config['state'] instanceof UploadState) {

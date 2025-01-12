@@ -133,7 +133,7 @@ ul li {
   font-size: 12px;
   padding-left: 40px;
   padding-right: 50px;
-  outline: none; /* loại bỏ viền khi focus */
+  outline: none; 
 }
 
 .others-list .icon1 .fa-search {
@@ -147,6 +147,35 @@ ul li {
   visibility: visible;
   top: 49px;
 }
+
+.icon3 .logout-btn {
+    background-color: #d32f2f; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 9px 12px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-right: -30px;
+}
+
+
+.icon3 .logout-btn:hover {
+    background-color: #b71c1c; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
+}
+
+.icon3 .logout-btn:active {
+    background-color: #c62828; 
+    transform: translateY(0); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
 
 .others .quick-search {
   position: absolute;
@@ -190,11 +219,15 @@ ul li {
   line-height: 1;
 }
 
+.icon4 {
+    position: relative; 
+}
+
 .others-list .number-cart {
-  font-weight: 400;
-  font-size: 14px;
-  position: absolute;
-  top: 0;
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    top: 3px;
 }
 
 .others .others-list a {
@@ -2638,3 +2671,5 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
   text-transform: uppercase;
   font-weight: 600;
 }
+
+

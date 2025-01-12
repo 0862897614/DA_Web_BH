@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckfinder/
- * Copyright (c) 2007-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * https://ckeditor.com/ckeditor-4/ckfinder/
+ * Copyright (c) 2007-2019, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -21,7 +21,6 @@ use CKSource\CKFinder\Event\CKFinderEvent;
 use CKSource\CKFinder\Event\ResizeImageEvent;
 use CKSource\CKFinder\Filesystem\Path;
 use CKSource\CKFinder\ResourceType\ResourceType;
-use League\Flysystem\FilesystemException;
 
 /**
  * The ThumbnailRepository class.
@@ -43,17 +42,21 @@ class ThumbnailRepository
     /**
      * The Backend where thumbnails are stored.
      *
-     * @var Backend
+     * @var Backend $thumbsBackend
      */
     protected $thumbsBackend;
 
     /**
      * Event dispatcher.
+     *
+     * @var $dispatcher
      */
     protected $dispatcher;
 
     /**
      * Constructor.
+     *
+     * @param CKFinder $app
      */
     public function __construct(CKFinder $app)
     {
@@ -106,7 +109,7 @@ class ThumbnailRepository
      * Returns information about bitmap support for thumbnails. If bitmap
      * support is disabled, thumbnails for bitmaps will not be generated.
      *
-     * @return bool `true` if bitmap support is enabled
+     * @return bool `true` if bitmap support is enabled.
      */
     public function isBitmapSupportEnabled()
     {
@@ -125,9 +128,11 @@ class ThumbnailRepository
      * @param int          $requestedWidth  requested thumbnail height
      * @param int          $requestedHeight requested thumbnail height
      *
+     * @return Thumbnail
+     *
      * @throws \Exception
      */
-    public function getThumbnail(ResourceType $resourceType, string $path, string $fileName, int $requestedWidth, int $requestedHeight): Thumbnail
+    public function getThumbnail(ResourceType $resourceType, $path, $fileName, $requestedWidth, $requestedHeight)
     {
         $thumbnail = new Thumbnail($this, $resourceType, $path, $fileName, $requestedWidth, $requestedHeight);
 
@@ -135,7 +140,7 @@ class ThumbnailRepository
             $thumbnail->create();
 
             $createThumbnailEvent = new ResizeImageEvent($this->app, $thumbnail);
-            $this->dispatcher->dispatch($createThumbnailEvent, CKFinderEvent::CREATE_THUMBNAIL);
+            $this->dispatcher->dispatch(CKFinderEvent::CREATE_THUMBNAIL, $createThumbnailEvent);
 
             if (!$createThumbnailEvent->isPropagationStopped()) {
                 $thumbnail = $createThumbnailEvent->getResizedImage();
@@ -152,22 +157,18 @@ class ThumbnailRepository
      * Deletes all thumbnails under the given path defined by the resource type,
      * path and file name.
      *
-     * @return bool `true` if deleted successfully
+     * @param ResourceType $resourceType
+     * @param string       $path
+     * @param string       $fileName
      *
-     * @throws FilesystemException
+     * @return bool `true` if deleted successfully
      */
-    public function deleteThumbnails(ResourceType $resourceType, string $path, string $fileName = null): bool
+    public function deleteThumbnails(ResourceType $resourceType, $path, $fileName = null)
     {
         $path = Path::combine($this->getThumbnailsPath(), $resourceType->getName(), $path, $fileName);
 
         if ($this->thumbsBackend->has($path)) {
-            try {
-                $this->thumbsBackend->deleteDirectory($path);
-
-                return true;
-            } catch (FilesystemException $e) {
-                return false;
-            }
+            return $this->thumbsBackend->deleteDir($path);
         }
 
         return false;

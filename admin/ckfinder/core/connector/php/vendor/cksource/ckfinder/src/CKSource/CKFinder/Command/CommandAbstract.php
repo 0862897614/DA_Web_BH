@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckfinder/
- * Copyright (c) 2007-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * https://ckeditor.com/ckeditor-4/ckfinder/
+ * Copyright (c) 2007-2019, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -26,7 +26,7 @@ abstract class CommandAbstract
     /**
      * The CKFinder instance.
      *
-     * @var CKFinder
+     * @var CKFinder $app
      */
     protected $app;
 
@@ -40,12 +40,14 @@ abstract class CommandAbstract
     /**
      * An array of permissions required by the command.
      *
-     * @var array
+     * @var array $requires
      */
-    protected $requires = [];
+    protected $requires = array();
 
     /**
      * Constructor.
+     *
+     * @param CKFinder $app
      */
     public function __construct(CKFinder $app)
     {
@@ -54,6 +56,8 @@ abstract class CommandAbstract
 
     /**
      * Injects dependency injection container to the command scope.
+     *
+     * @param CKFinder $app
      */
     public function setContainer(CKFinder $app)
     {
@@ -63,7 +67,7 @@ abstract class CommandAbstract
     /**
      * Checks permissions required by the command before it is executed.
      *
-     * @throws \Exception if access is restricted
+     * @throws \Exception if access is restricted.
      */
     public function checkPermissions()
     {
@@ -90,7 +94,7 @@ abstract class CommandAbstract
         return $this->requestMethod;
     }
 
-    /*
+    /**
      * This method is not defined as abstract to allow for parameter injection.
      * @see CKSource\CKFinder\CommandResolver::getArguments()
      */
