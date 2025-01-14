@@ -29,15 +29,19 @@ header {
 .admin-content-left {
     background-color: #dddddd;
     width: 20%;
-    padding: 30px 0 0 12px;
+    padding: 30px 0 20px 30px;
 }
 
 .admin-content-left > ul > li > a {
     font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .admin-content-left ul li {
-    margin: 6px 0 ;
+    margin: 10px 0 ;
+    font-size: 18px;
 }
 
 .admin-content-left ul ul{
@@ -46,7 +50,7 @@ header {
 
 .admin-content-right {
     width: 80%;
-    padding: 30px 30px 50px 40px;
+    padding: 20px 30px 50px 40px;
 }
 
 .admin-content-right-product_add button,
@@ -83,7 +87,6 @@ header {
 }
 
 /*----------- cartegory_list------------ */
-
 .admin-content-right-category_list table {
     width: 100%;
     text-align: center;
@@ -93,17 +96,11 @@ header {
 }
 
 .admin-content-right-category_list table tr {
-    height: 40px; /* Điều chỉnh chiều cao của các hàng */
+    height: 40px; 
 }
 
-.admin-content-right-category_list table th,td {
-    border: 1px solid #dddd;
-    padding: 10px;
-}
+
 /* ---Product---- */
-.admin-content-right-product_add h1 {
-    margin-bottom: 20px;
-}
 
 .admin-content-right-product_add textarea {
     height: 200px;
@@ -134,3 +131,69 @@ header {
     background-color: white;
 }
 
+
+/* productlist */
+.admin-content-right-product_list {
+    width: 100%;
+}
+
+.admin-content-right-product_list h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.admin-content-right-product_list table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px;
+    table-layout: auto; 
+}
+
+
+
+.admin-content-right-category_list table th,
+.admin-content-right-category_list table td,
+.admin-content-right-product_list table th,
+.admin-content-right-product_list table td {
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word; 
+    white-space: nowrap; 
+}
+
+.admin-content-right-product_list table th {
+    font-weight: bold;
+}
+
+.admin-content-right-category_list table th,td,
+.admin-content-right-product_list table th,td {
+    border: 1px solid #ddd;
+}
+
+.admin-content-right-product_list table img {
+    width: 80px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.admin-content-right-brand_list table tr:hover,
+.admin-content-right-category_list table tr:hover,
+.admin-content-right-product_list table tr:hover {
+    background-color: #f6f6f6; 
+}
+
+.admin-content-right-brand_list a,
+.admin-content-right-category_list a,
+.admin-content-right-product_list a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.admin-content-right-brand_list a:hover,
+.admin-content-right-category_list a:hover,
+.admin-content-right-product_list a:hover {
+    text-decoration: underline;
+}

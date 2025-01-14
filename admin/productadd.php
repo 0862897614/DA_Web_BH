@@ -21,7 +21,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 
 <div class="admin-content-right">
     <div class="admin-content-right-product_add">
-        <h1>Thêm Sản Phẩm</h1>
+        <h1 style="margin-bottom: 20px;">Thêm Sản Phẩm</h1>
         <form action="" method="POST" enctype="multipart/form-data">
             <label for="">Nhập tên sản phẩm<span style="color: red;">*</span></label>
             <input type="text" name="product_name" required>
@@ -44,7 +44,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
             <label for="">Chọn loại sản phẩm<span style="color: red;">*</span></label>
             <select name="brand_id" id="brand_id">
                 <option value="#">--Chọn--</option>
-
+                <!-- AJAX sẽ xử lý ở đây -->
             </select>
             <label for="">Giá sản phẩm<span style="color: red;">*</span></label>
             <input name="product_price" type="text" required>
@@ -83,7 +83,9 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
         $("#category_id").change(function() {
             // alert($(this).val());
             var x = $(this).val();
-            $.get("productadd_ajax.php", {category_id:x}, function(data){
+            $.get("productadd_ajax.php", {
+                category_id: x
+            }, function(data) {
                 $("#brand_id").html(data);
             })
         });

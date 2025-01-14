@@ -1,27 +1,28 @@
 <?php
-
 include 'session.php';
 Session::checkSession();
-include "class/product_class.php";
-$product = new product;
+include "class/brand_class.php";
 
-// Kiểm tra xem 'category_id' có tồn tại trong tham số URL hay không
-if (isset($_GET["category_id"])) {
-    $category_id = $_GET["category_id"];
+$brand = new brand();
 
-    // Giả sử bạn có phương thức show_brand_ajax để xử lý
-    $show_brand_ajax = $product->show_brand_ajax($category_id);
-    if ($show_brand_ajax) {
-        while ($result = $show_brand_ajax->fetch_assoc()) {
-?>
-            <option value="<?php echo $result['brand_id']; ?>">
-                <?php echo $result['brand_name']; ?>
-            </option>
-<?php
+// Kiểm tra nếu có 'category_id' trong yêu cầu GET
+if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
+    $category_id = filter_var($_GET['category_id'], FILTER_VALIDATE_INT);
+
+    if ($category_id) {
+        // Lấy danh sách thương hiệu theo category_id
+        $show_brand_ajax = $brand->show_brand_by_category($category_id);
+
+        if ($show_brand_ajax) {
+            while ($result = $show_brand_ajax->fetch_assoc()) {
+                echo '<option value="' . $result['brand_id'] . '">' . $result['brand_name'] . '</option>';
+            }
+        } else {
+            echo '<option value="">Không tìm thấy thương hiệu</option>';
         }
+    } else {
+        echo '<option value="">Dữ liệu không hợp lệ</option>';
     }
 } else {
-    // Nếu category_id không có, bạn có thể hiển thị lỗi hoặc xử lý thích hợp
-    echo "Lỗi: category_id chưa được cung cấp.";
+    echo '<option value="">Yêu cầu không hợp lệ</option>';
 }
-?>

@@ -13,7 +13,7 @@
 
 <div class="admin-content-right">
     <div class="admin-content-right-category_list">
-        <h1>Danh sách danh mục</h1>
+        <h1>Danh sách loại sản phẩm</h1>
         <table>
             <tr>
                 <th>STT</th>

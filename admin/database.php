@@ -1,8 +1,10 @@
 <?php
-    include "config.php";
+require_once "config.php";
 ?>
 
+
 <?php
+
 class Database{
     public $host = DB_HOST;
     public $user = DB_USER;

@@ -1,6 +1,6 @@
-<!-- <?php
-        include "database.php";
-        ?>
+<?php
+include_once "database.php";
+?>
 
 <?php
 
@@ -37,6 +37,8 @@ class product
         return $result;
     }
 
+    
+
     public function insert_product()
     {
         // Xử lý và bảo vệ dữ liệu đầu vào
@@ -54,7 +56,7 @@ class product
             $target_file = $target_dir . basename($product_img);
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             // Kiểm tra loại ảnh
-            $allowed_types = ['jpg', 'png', 'jpeg', 'gif'];
+            $allowed_types = ['jpg', 'png', 'jpeg', 'gif','webp'];
             if (in_array($imageFileType, $allowed_types)) {
                 // Kiểm tra và tải ảnh lên
                 if (move_uploaded_file($_FILES['product_img']['tmp_name'], $target_file)) {
@@ -87,7 +89,7 @@ class product
                     echo "Có lỗi khi tải ảnh lên.";
                 }
             } else {
-                echo "Chỉ hỗ trợ các định dạng ảnh JPG, PNG, JPEG và GIF.";
+                echo "Chỉ hỗ trợ các định dạng ảnh JPG, PNG, WEBP, JPEG và GIF.";
             }
         } else {
             echo "Vui lòng chọn ảnh sản phẩm.";
@@ -95,30 +97,61 @@ class product
     }
 
 
-
-
-
-    public function get_brand($brand_id)
+    public function show_product()
     {
-        $query = "SELECT * FROM tbl_brand WHERE brand_id = '$brand_id' ";
+        $query = "SELECT tbl_product.product_id, tbl_product.product_name, tbl_category.category_name, 
+                     tbl_brand.brand_name, tbl_product.product_price, tbl_product.product_price_new, tbl_product.product_img
+              FROM tbl_product
+              INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+              INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id
+              ORDER BY tbl_product.product_id DESC";
         $result = $this->db->select($query);
         return $result;
-    }   
-    public function update_brand($cartegory_id, $brand_name, $brand_id)
+    }
+
+    public function get_product($product_id)
     {
-        $query = "UPDATE tbl_brand SET brand_name = '$brand_name',cartegory_id = '$cartegory_id'  WHERE brand_id = '$brand_id'";
+        $query = "SELECT tbl_product.product_id, tbl_product.product_name, tbl_product.category_id, tbl_product.brand_id, 
+                     tbl_product.product_price, tbl_product.product_price_new, tbl_product.product_desc, tbl_product.product_img
+              FROM tbl_product
+              WHERE tbl_product.product_id = '$product_id'";
+        $result = $this->db->select($query);
+        return $result ? $result->fetch_assoc() : null; // Trả về dữ liệu sản phẩm hoặc null nếu không có kết quả
+    }
+
+    public function update_product($product_id, $product_name, $category_id, $brand_id, $product_price, $product_price_new, $product_desc, $product_img)
+    {
+        $product_name = htmlspecialchars($this->db->link->real_escape_string($product_name));
+        $category_id = (int)$category_id;
+        $brand_id = (int)$brand_id;
+        $product_price = (float)$product_price;
+        $product_price_new = (float)$product_price_new;
+        $product_desc = htmlspecialchars($this->db->link->real_escape_string($product_desc));
+        $product_img = htmlspecialchars($this->db->link->real_escape_string($product_img));
+
+        // Câu lệnh SQL cập nhật
+        $query = "UPDATE tbl_product SET 
+                product_name = '$product_name',
+                category_id = '$category_id', 
+                brand_id = '$brand_id', 
+                product_price = '$product_price', 
+                product_price_new = '$product_price_new', 
+                product_desc = '$product_desc', 
+                product_img = '$product_img' 
+              WHERE product_id = '$product_id'";
+
         $result = $this->db->update($query);
-        header('location:brandlist.php');
         return $result;
     }
 
-    public function delete_brand($brand_id)
+
+    public function delete_product($product_id)
     {
-        $query = "DELETE FROM tbl_brand WHERE brand_id = '$brand_id' ";
+        $query = "DELETE FROM tbl_product WHERE product_id = '$product_id'";
         $result = $this->db->delete($query);
-        header('location:brandlist.php');
         return $result;
     }
+
 }
 ?>
 
@@ -132,8 +165,3 @@ class product
 
 
 
-
-   
-
-
-      -->

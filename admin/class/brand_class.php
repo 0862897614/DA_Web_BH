@@ -1,5 +1,5 @@
 <?php
-    include "database.php";
+include_once "database.php";
 ?>
 
 <?php 
@@ -64,6 +64,15 @@
             header('location:brandlist.php');
             return $result;
         }
+
+
+    public function show_brand_by_category($category_id)
+    {
+        $query = "SELECT * FROM tbl_brand WHERE category_id = '$category_id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
 
     }
 ?>
