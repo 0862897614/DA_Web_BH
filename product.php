@@ -22,17 +22,20 @@
     <base href="http://localhost/Doan_Web/">
 
     <!-- style, js -->
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="/Doan_Web/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/style.css" />
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/listSize.js"></script>
+    <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/addprd.js"></script>
+
 </head>
 
 <body>
     <div class="wrapper">
-        <?php 
+        <?php
         include("pages/header.php");
-      ?>
+        ?>
         <div class="container">
 
             <!-- product_detail -->
@@ -50,7 +53,7 @@
                                 <li class="breadcrumb_item">
                                     <a href="product.php">Áo vest Tweed Kose</a>
                                 </li>
-                            </ol> 
+                            </ol>
                         </div>
                     </div>
                     <div class="product-detail_body">
@@ -1115,7 +1118,7 @@
         </div>
         <?php
         include("pages/footer.php");
-      ?>
+        ?>
         <div class="overlay"></div>
     </div>
 

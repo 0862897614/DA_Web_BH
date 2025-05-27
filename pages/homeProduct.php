@@ -478,7 +478,7 @@
               <!-- prd1 -->
               <div class="product">
                 <div class="info-ticket seller">* Best Seller</div>
-                <div class="ivymoda badget">-30<span>%</span></div>
+                <div class="ivymoda badget"><span>-30<span>%</span></span></div>
                 <div class="thumb_prd">
                   <a href="">
                     <img src="assets/img/prd2-1.webp" alt="" class="owl-lazy" />

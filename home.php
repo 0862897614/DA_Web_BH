@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +27,16 @@ session_start();
     <base href="http://localhost/Doan_Web/">
 
     <!-- style, js -->
+    <link rel="stylesheet" href="/Doan_Web/assets/css/style.css">
     <link rel="stylesheet" href="./assets/style.css" />
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/listSize.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/addprd.js"></script>
 </head>
 
 <body>
+
     <?php
     include("pages/header.php");
     include("pages/slideShow.php");
@@ -39,8 +44,8 @@ session_start();
     include("pages/homePromote.php");
     include("pages/footer.php");
     ?>
+
     <div class="overlay"></div>
-    </div>
 </body>
 
 </html>

@@ -148,7 +148,12 @@ ul li {
   top: 49px;
 }
 
-.icon3 .logout-btn {
+
+.others-list .icon5{
+  margin-left: 7px;
+}
+
+.icon5 .logout-btn {
     background-color: #d32f2f; 
     color: #fff; 
     border: none; 
@@ -163,13 +168,13 @@ ul li {
 }
 
 
-.icon3 .logout-btn:hover {
+.icon5 .logout-btn:hover {
     background-color: #b71c1c; 
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
     transform: translateY(-2px); 
 }
 
-.icon3 .logout-btn:active {
+.icon5 .logout-btn:active {
     background-color: #c62828; 
     transform: translateY(0); 
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
@@ -1865,6 +1870,7 @@ li.breadcrumb_item:nth-child(2) a::before {
 }
 
 .filter-by-side .list-side {
+  padding-right: 8px;
   width: 270px; /* Đảm bảo rằng chiều rộng phù hợp với không gian có sẵn */
   max-height: 540px; /* Chiều cao tối đa cho danh sách */
   overflow-y: auto; /* Chỉ tạo thanh cuộn dọc khi cần */
@@ -2200,7 +2206,7 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
 }
 
 .section-list-products .filter .but_filter_remove {
-  margin-right: 35px;
+  margin-right: 25px;
 }
 
 /* main-prod */
@@ -2671,5 +2677,3 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
   text-transform: uppercase;
   font-weight: 600;
 }
-
-

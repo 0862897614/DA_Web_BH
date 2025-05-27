@@ -27,7 +27,44 @@ function initShoppingBags() {
         listSize.style.visibility = "hidden"; // Ẩn danh sách nếu không active
       }
     });
+
+    // Bắt sự kiện click vào từng nút size
+    const sizeButtons = bag.querySelectorAll(".list-size button");
+    sizeButtons.forEach((btn) => {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const productElem = bag.closest(".product");
+        if (!productElem) return;
+        // Lấy thông tin sản phẩm
+        const title = productElem.querySelector(".title-prd a").innerText;
+        const price = productElem.querySelector(".price-prd span").innerText;
+        const img = productElem.querySelector(".thumb_prd img").src;
+        const size = btn.innerText.toUpperCase();
+        // Tạo object sản phẩm
+        const cartItem = {
+          title,
+          price,
+          img,
+          size,
+          quantity: 1
+        };
+        if (typeof addToCart === 'function') {
+          addToCart(cartItem);
+        }
+        if (typeof showAddToCartPopup === 'function') {
+          showAddToCartPopup();
+        }
+        if (typeof renderCart === 'function') {
+          renderCart();
+        }
+        // Đóng danh sách size và bỏ active
+        const listSize = bag.querySelector('.list-size');
+        if (listSize) {
+          listSize.style.opacity = 0;
+          listSize.style.visibility = 'hidden';
+        }
+        bag.classList.remove('active');
+      });
+    });
   });
 }
-
-initShoppingBags();

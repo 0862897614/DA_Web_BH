@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Trang Web Tối</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      padding: 10px 15px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li:hover {
+      background-color: #f0f0f0;
+    }
+
+    main {
+      padding: 50px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 5;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Trang Chủ</li>
+          <li>Dịch Vụ</li>
+          <li>Giới Thiệu</li>
+          <li>Liên Hệ</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Chào Mừng Đến Với Trang Web Của Chúng Tôi</h1>
+      <p>Đây là nội dung chính của trang web.</p>
+    </main>
+    <footer>
+      <p>© 2024 Công Ty ABC</p>
+    </footer>
+    <div class="overlay"></div>
+
+    <script>
+      const overlay = document.querySelector(".overlay");
+      const navItems = document.querySelectorAll("nav ul li");
+
+      navItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          overlay.style.opacity = "1";
+          overlay.style.pointerEvents = "auto";
+        });
+        item.addEventListener("mouseleave", () => {
+          overlay.style.opacity = "0";
+          overlay.style.pointerEvents = "none";
+        });
+      });
+    </script>
+  </body>
+</html>

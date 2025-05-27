@@ -301,28 +301,43 @@
               </div>
             </div>
           </li>
-          <li class="icon2">
-            <a href="" class="fa-solid fa-headphones"></a>
+          <li class="icon2 help-dropdown">
+            <a href="javascript:void(0)" class="fa-solid fa-headphones" id="helpDropdownBtn"></a>
+            <div class="dropdown-help" id="helpDropdownMenu">
+              <div class="dropdown-title">Trợ giúp</div>
+              <a href="pages/hotline.php"><i class="fa fa-phone"></i> Hotline</a>
+              <a href="pages/livechat.php"><i class="fa fa-comments"></i> Live Chat</a>
+              <a href="pages/messenger.php"><i class="fa fa-facebook-messenger"></i> Messenger</a>
+              <a href="mailto:support@example.com"><i class="fa fa-envelope"></i> Email</a>
+              <a href="pages/order-lookup.php"><i class="fa fa-search"></i> Tra cứu đơn hàng</a>
+            </div>
           </li>
           <li class="icon4">
-            <a href="" class="fa fa-shopping-bag">
+            <a href="#" class="fa fa-shopping-bag">
               <span class="number-cart">0</span>
             </a>
-            <!-- <div class="sub-action sub-action-cart open">
-                  <div class="top-action">
-                    <h3>"Giỏ hàng"<span class="number-cart">1</span></h3>
-                  </div>
-                  <div class="main-action">
-                    <div class="item-product-cart">
-                      <div class="thumb-product-cart"></div>
-                      <div class="info-product-cart"></div>
-                    </div>
-                  </div>
-                  <div class="bottom-action"></div>
-                  <div class="action-close"></div>
-                </div> -->
+            <div class="sub-action sub-action-cart ">
+              <div class="top-action">
+                <h3>Giỏ hàng <span class="number-cart">1</span></h3>
+              </div>
+              <div class="main-action"></div>
+              <div class="bottom-action">
+                <!-- <input type="hidden" value="1" class="total-quantity-cart" /> -->
+                <div class="total-price">
+                  <span>Tổng tiền:</span>
+                  <span class="total-price-cart"><strong>1.590.000₫</strong></span>
+                </div>
+                <div class="box-action">
+                  <a href="" class="action-view-cart">Xem giỏ hàng</a>
+                  <a href="../admin/login.php" class="action-login">Đăng nhập</a>
+                </div>
+              </div>
+              <div class="action-close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
           </li>
-          <li class="icon3">
+          <li class="icon5">
             <?php if (isset($_SESSION['username'])): ?>
               <span style="margin-left: 7px;" class="username">Xin chào, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
               <a href="admin/logout.php"><button class="logout-btn">Đăng xuất</button></a>

@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Khởi tạo bx-shopping-bag
   initShoppingBags();
+
+
+
 });
 
 // Hàm thiết lập nút cuộn lên đầu trang
@@ -203,3 +206,7 @@ menuList.forEach((item) => {
     overlay.style.pointerEvents = "none";
   });
 });
+
+
+
+
