@@ -1,3 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <header class="header fixed">
   <div class="main-content">
     <div class="body-header">
@@ -328,8 +334,8 @@
                   <span class="total-price-cart"><strong>1.590.000₫</strong></span>
                 </div>
                 <div class="box-action">
-                  <a href="" class="action-view-cart">Xem giỏ hàng</a>
-                  <a href="../admin/login.php" class="action-login">Đăng nhập</a>
+                  <a href="./Payment/cart.php" class="action-view-cart">Xem giỏ hàng</a>
+                  <a href="./admin/login.php" class="action-login">Đăng nhập</a>
                 </div>
               </div>
               <div class="action-close">
@@ -339,7 +345,7 @@
           </li>
           <li class="icon5">
             <?php if (isset($_SESSION['username'])): ?>
-              <span style="margin-left: 7px;" class="username">Xin chào, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+              <span style="margin-left: 7px;" class="username"> <?php echo htmlspecialchars($_SESSION['username']); ?></span>
               <a href="admin/logout.php"><button class="logout-btn">Đăng xuất</button></a>
             <?php else: ?>
               <a href="admin/login.php" class="fa-solid fa-user"></a>

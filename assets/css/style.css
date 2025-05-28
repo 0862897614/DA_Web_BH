@@ -1041,17 +1041,20 @@ ul li {
     position: fixed;
     top: 0;
     right: 0;
+    bottom: 0;
     width: 400px;
-    max-width: 90vw;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
     background: #fff;
     box-shadow: -2px 0 16px rgba(0,0,0,0.08);
-    z-index: 10001;
+    z-index: 3;
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s;
     pointer-events: none;
 }
+
 .header .sub-action-cart.open {
     transform: translateX(0);
     opacity: 1;
@@ -1065,10 +1068,7 @@ ul li {
 }
 
 .header .sub-action-cart .top-action span {
-  font-size: 15px;
-  line-height: 24px;
-  color: #ffffff;
-  padding-left: 8px;
+  padding-left: 2px;
 }
 
 .header .sub-action-cart .top-action .number-cart {
@@ -1086,12 +1086,12 @@ ul li {
   font-weight: bold;
   color: #fff;
   line-height: 1;
-  padding: 0;
-  margin-left: 0;
 }
 
 .header .sub-action-cart .main-action{
-  padding: 24px;
+  padding: 24px 24px 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .header .sub-action-cart .item-product-cart {
@@ -1109,8 +1109,9 @@ ul li {
 
 .header  .main-action .info-product-cart h3 a{
   color: #373737;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
+  padding: 0 0 10px;
 }
 
 .header  .main-action{
@@ -1119,7 +1120,7 @@ ul li {
 
 .header .main-action::before {
   content: "";
-  height: 1px;
+  height: 0.7px;
   top: 0;
   left: 0;
   right: 0;
@@ -1127,13 +1128,20 @@ ul li {
   position: absolute;
 }
 
-.header .main-action::after {
+.main-action > div {
+  position: relative;
+  padding-bottom: 7px;
+  margin-bottom: 12px;
+}
+
+.main-action > div::after {
   content: "";
-  height: 1px;
-  bottom: 10px;
-  width: 90%;
-  background-color: #eef0f0;
   position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5px;
+  background-color: #eef0f0;
 }
 
 
@@ -1227,8 +1235,10 @@ ul li {
 .sub-action-cart .bottom-action {
   width: 100%;
   padding: 24px 24px 15px ;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  background-color: white;
+  z-index: 1;
 
 }
 
@@ -1258,10 +1268,8 @@ ul li {
   text-transform: uppercase;
   font-weight: 500;
   text-align: center;
-  
+  cursor: pointer;
 }
-
-
 
 .bottom-action .box-action::after {
   content: "";
@@ -1273,17 +1281,42 @@ ul li {
   position: absolute;
 }
 
- 
-.bottom-action .box-action .action-view-cart{
+.bottom-action .box-action .action-view-cart {
   color: #fff;
   background: #000;
   margin-bottom: 20px;
+  z-index: 10;
+  border: 1px solid #000;
+  transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
 .bottom-action .box-action .action-login {
-  color: #4e4b51;
-  font-weight: bold;
-  border: 1px solid #030303;
+  color: #000;
+  background: #fff;
+  font-weight: 550;
+  border: 1px solid #000;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.bottom-action .box-action .action-view-cart:hover {
+  background-color: #000;
+  color: #fff;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.bottom-action .box-action .action-login:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+/* Khi hover vào .action-login thì .action-view-cart đổi style */
+.bottom-action .box-action:has(.action-login:hover) .action-view-cart {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
 
@@ -1298,7 +1331,7 @@ ul li {
 
 .help-dropdown:hover .dropdown-help,
 .help-dropdown:focus-within .dropdown-help {
-  display: block !important;
+  display: block ;
 }
 
 

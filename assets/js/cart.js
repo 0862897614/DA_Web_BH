@@ -30,7 +30,6 @@ function initQuantityButtons() {
 
 // thêm sản phẩm vào giỏ hàng
 function initAddToCartButtons() {
-  // ... giữ nguyên nội dung nếu có ...
 }
 
 function getCart() {

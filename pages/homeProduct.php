@@ -458,7 +458,7 @@
     <!-- home-new-product 2-->
     <section class="home-new-prd" data-id="2">
       <div class="main-content">
-        <div class="title-section">FALL - WINTER COLLECTION 2024 | SALE 30% ALL ITEMS</div>
+        <div class="title-section">FALL - WINTER COLLECTION 2025 | SALE 30% ALL ITEMS</div>
         <div class="exclusive-tabs">
              <div class="exclusive-head">
             <ul>
