@@ -6,6 +6,51 @@ document.addEventListener("DOMContentLoaded", function() {
   closeCart();
   renderCart();
   bindCartEvents();
+
+  // Xử lý chọn size: click vào label sẽ chọn radio và highlight span
+  const sizeLabels = document.querySelectorAll('.product-detail__size__input label');
+  sizeLabels.forEach(label => {
+    label.addEventListener('click', function() {
+      // Xóa border các span khác
+      sizeLabels.forEach(lab => lab.querySelector('span').classList.remove('selected'));
+      // Thêm border cho span được chọn
+      this.querySelector('span').classList.add('selected');
+    });
+  });
+
+  // Xử lý thêm vào giỏ hàng
+  const addBtn = document.querySelector('.add-to-cart-detail');
+  if (addBtn) {
+    addBtn.addEventListener('click', function() {
+      // Lấy thông tin sản phẩm
+      const title = document.querySelector('.product-detail__information .title')?.innerText.trim() || '';
+      const price = document.querySelector('.product-detail__price b')?.innerText.trim() || '';
+      const img = document.querySelector('.product-gallery__slide--big img')?.src || '';
+      // Lấy size
+      const checkedSize = document.querySelector('.product-detail__size__input input[type="radio"]:checked');
+      let size = checkedSize ? checkedSize.value.toUpperCase() : '';
+      if (!size) {
+        alert('Vui lòng chọn size!');
+        return;
+      }
+      // Số lượng
+      let quantity = 1;
+      const qtyInput = document.querySelector('input[name="quantity"]');
+      if (qtyInput) quantity = parseInt(qtyInput.value) || 1;
+
+      // Tạo object sản phẩm
+      const cartItem = { title, price, img, size, quantity };
+      if (typeof addToCart === 'function') {
+        addToCart(cartItem);
+      }
+      if (typeof showAddToCartPopup === 'function') {
+        showAddToCartPopup();
+      }
+      if (typeof renderCart === 'function') {
+        renderCart();
+      }
+    });
+  }
 });
 
 function initQuantityButtons() {

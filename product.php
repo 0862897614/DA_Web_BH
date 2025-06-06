@@ -23,11 +23,10 @@
 
     <!-- style, js -->
     <link rel="stylesheet" href="/Doan_Web/assets/css/style.css">
-    <link rel="stylesheet" href="./assets/style.css" />
-    <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/listSize.js"></script>
-    <script src="./assets/js/cart.js"></script>
-    <script src="./assets/js/addprd.js"></script>
+    <link rel="stylesheet" href="/Doan_Web/assets/style.css" />
+    <script src="/Doan_Web/assets/js/index.js"></script>
+    <script src="/Doan_Web/assets/js/listSize.js"></script>
+    <script src="/Doan_Web/assets/js/cart.js"></script>
 
 </head>
 
@@ -101,7 +100,7 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <span>(0 đánh giá)</span>
+                                        <span>(5.0 đánh giá)</span>
 
                                     </div>
                                     <div class="product-detail__price">
@@ -1334,6 +1333,62 @@
         document.querySelector('.exit i').addEventListener('click', function() {
             document.getElementById('overlay-size').classList.remove(
                 'active'); // Ẩn overlay-size khi click vào icon
+        });
+
+        function showSizeRequiredPopup() {
+            let popup = document.createElement('div');
+            popup.className = 'add-cart-popup';
+            popup.innerHTML = `
+                <div class="popup-overlay"></div>
+                <div class="popup-content">
+                    <div style="font-size:40px;text-align:center;margin-bottom:10px; color: #1976d2;">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div style="font-size:20px;text-align:center; color: #1976d2; font-weight:600;">Bạn chưa chọn size!</div>
+                </div>
+            `;
+            Object.assign(popup.style, {
+                position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 9999
+            });
+            const overlay = popup.querySelector('.popup-overlay');
+            Object.assign(overlay.style, {
+                position: 'absolute', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.2)', zIndex: 1
+            });
+            const content = popup.querySelector('.popup-content');
+            Object.assign(content.style, {
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#fff', borderRadius: '16px', boxShadow: '0 8px 32px rgba(0,0,0,0.18)', padding: '32px 24px', zIndex: 2, minWidth: '250px', maxWidth: '90vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+            });
+            document.body.appendChild(popup);
+            setTimeout(() => { popup.remove(); }, 1200);
+        }
+
+        // Đảm bảo DOM đã load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý thêm vào giỏ hàng cho các sản phẩm gợi ý bên dưới
+            document.querySelectorAll('.product-related .bx-shopping-bag .list-size button').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Lấy thông tin sản phẩm
+                    const productBox = btn.closest('.product');
+                    const title = productBox.querySelector('.title-prd a')?.innerText.trim() || '';
+                    const price = productBox.querySelector('.price-prd span')?.innerText.trim() || '';
+                    const img = productBox.querySelector('.thumb_prd img')?.src || '';
+                    const size = btn.innerText.trim().toUpperCase();
+                    const quantity = 1;
+                    if (!size) {
+                        if (typeof showSizeRequiredPopup === 'function') showSizeRequiredPopup();
+                        return;
+                    }
+                    const cartItem = { title, price, img, size, quantity };
+                    if (typeof addToCart === 'function') addToCart(cartItem);
+                    if (typeof showAddToCartPopup === 'function') showAddToCartPopup();
+                    if (typeof renderCart === 'function') renderCart();
+                    // Đóng popup size sau khi thêm
+                    btn.closest('.list-size').style.opacity = 0;
+                    btn.closest('.list-size').style.visibility = 'hidden';
+                    btn.closest('.bx-shopping-bag').classList.remove('active');
+                });
+            });
         });
     </script>
 

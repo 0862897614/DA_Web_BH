@@ -116,6 +116,7 @@ ul li {
 }
 
 .others-list .icon1 {
+  margin-top: 19px;
   position: relative;
   margin-right: 15px;
   opacity: 1;
@@ -218,14 +219,14 @@ ul li {
   margin-bottom: 20px;
 }
 
-.others .item-side-size .item-sub-title {
+/* .others .item-side-size .item-sub-title {
   font-size: 13px !important;
   border: 1px solid #e7e8e9;
   border-radius: 8px 0px;
   display: inline-block;
   margin: 4px;
   line-height: 1;
-}
+} */
 
 .icon4 {
     position: relative; 
@@ -1292,7 +1293,8 @@ li.breadcrumb_item:nth-child(2) a::before {
   -webkit-appearance: none; /* Loại bỏ kiểu dáng mặc định trên WebKit */
 }
 
-.product-detail__size__input .slash::before {
+
+/* .product-detail__size__input .slash::before {
   content: "";
   position: absolute;
   width: 1px;
@@ -1302,13 +1304,31 @@ li.breadcrumb_item:nth-child(2) a::before {
   background: #6c6d70;
   left: 50%;
   transform: translate(-50%, 0) rotate(57deg);
+} */
+
+
+
+
+.product-detail__size__input input[type="radio"]:checked + span {
+    cursor: pointer;
+  border: 0.7px solid #000000;
+  color: #000000;
 }
+
 
 .product-detail__size .size_product span {
   color: #3f3f3f;
   font-size: 13px;
   padding: 20px 0;
   display: inline-block;
+
+}
+
+.product-detail__size__input span.selected {
+  border: 2px solid #221f20;
+  color: #221f20;
+  font-weight: 600;
+  box-shadow: 0 0 6px #d73831;
 }
 
 .product-detail__size .size_product i {
@@ -2022,11 +2042,12 @@ li.breadcrumb_item:nth-child(2) a::before {
 }
 
 .item-side-price .slider {
-  position: absolute;
+  position: relative;
   width: 97%;
   height: 5px;
   background: #ddd;
   border-radius: 99px;
+  margin: 0 auto;
 }
 
 .item-side-price .slider-range {
@@ -2034,12 +2055,12 @@ li.breadcrumb_item:nth-child(2) a::before {
   height: 5px;
   background: #221f20;
   z-index: 1;
+  border-radius: 99px;
 }
 
 .item-side-price .slider-handle {
   position: absolute;
   top: -9px;
-  margin-left: 2px;
   width: 24px;
   height: 24px;
   border: 2px solid #f7f8f9;
@@ -2202,10 +2223,11 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
 /* filter */
 
 .section-list-products .filter {
-  margin-top: 30px;
+  margin: 30px 0;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+
 }
 
 .section-list-products .filter .but_filter_remove {
@@ -2220,6 +2242,7 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
 .main-prod h1.sub-title-main {
   text-transform: uppercase;
   padding-left: 10px;
+  padding-bottom: 15px;
 }
 
 /* filter */
@@ -2680,3 +2703,5 @@ input[type="checkbox"]:checked + .item-sub-title .fa-minus,
   text-transform: uppercase;
   font-weight: 600;
 }
+
+

@@ -23,11 +23,12 @@
 
     <!-- style, js -->
     <link rel="stylesheet" href="/Doan_Web/assets/css/style.css">
-    <link rel="stylesheet" href="./assets/style.css" />
-    <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/listSize.js"></script>
-    <script src="./assets/js/cart.js"></script>
-    <script src="./assets/js/addprd.js"></script>
+    <link rel="stylesheet" href="/Doan_Web/assets/style.css" />
+    <script src="/Doan_Web/assets/js/index.js"></script>
+    <script src="/Doan_Web/assets/js/listSize.js"></script>
+    <script src="/Doan_Web/assets/js/cart.js"></script>
+    <script src="/Doan_Web/assets/js/addprd.js"></script>
+    <script src="/Doan_Web/assets/js/filter.js"></script>
 
 </head>
 
@@ -1613,5 +1614,5 @@
 </body>
 <script src="./assets/js/filter.js"></script>
 <script src="./assets/js/listSize.js"></script>
-
+ 
 </html>

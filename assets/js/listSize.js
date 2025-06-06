@@ -33,9 +33,13 @@ function initShoppingBags() {
     sizeButtons.forEach((btn) => {
       btn.addEventListener("click", function(e) {
         e.stopPropagation();
+        // Hiệu ứng chọn size
+        const ul = btn.closest('ul');
+        ul.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        // Lấy thông tin sản phẩm
         const productElem = bag.closest(".product");
         if (!productElem) return;
-        // Lấy thông tin sản phẩm
         const title = productElem.querySelector(".title-prd a").innerText;
         const price = productElem.querySelector(".price-prd span").innerText;
         const img = productElem.querySelector(".thumb_prd img").src;

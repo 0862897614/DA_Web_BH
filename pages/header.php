@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?>
-
+!
 <header class="header fixed">
   <div class="main-content">
     <div class="body-header">
@@ -264,8 +264,10 @@ if (session_status() == PHP_SESSION_NONE) {
       <div class="others">
         <ul class="others-list">
           <li class="icon1">
-            <input type="text" placeholder="Tìm kiếm sản phẩm.." />
-            <i class="fas fa-search"></i>
+            <form action="search.php" method="get" style="display:inline;">
+              <input type="text" id="searchInput" name="q" placeholder="Tìm kiếm sản phẩm.." autocomplete="off" />
+              <button type="submit" style="background:none;border:none;"><i class="fas fa-search"></i></button>
+            </form>
             <div class="quick-search">
               <div class="items-search">
                 <h4 class="title-seach">Tìm kiếm nhiều nhất</h4>
@@ -356,3 +358,15 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
   </div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.quick-search .item-sub-title').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var keyword = this.textContent.trim();
+      window.location.href = 'search.php?q=' + encodeURIComponent(keyword);
+    });
+  });
+});
+</script>

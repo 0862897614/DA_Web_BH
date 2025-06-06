@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
 
   // Khởi tạo menu
-  initExclusiveHeadMenu();
+  // initExclusiveHeadMenu();
 
   // Khởi tạo hàng sản phẩm
   initProductRows();
@@ -25,8 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Khởi tạo bx-shopping-bag
   initShoppingBags();
 
-
-
+  document.querySelectorAll(".home-new-prd").forEach((section) => {
+    const tabs = section.querySelectorAll(".tab");
+    const productLists = section.querySelectorAll(".product-list");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        productLists.forEach((list) => list.classList.remove("active"));
+        const target = tab.getAttribute("data-target");
+        const activeProductList = section.querySelector(`#${target}`);
+        if (activeProductList) {
+          activeProductList.classList.add("active");
+        }
+      });
+    });
+  });
 });
 
 // Hàm thiết lập nút cuộn lên đầu trang
@@ -81,16 +95,16 @@ function initSlideshow() {
 }
 
 // Hàm khởi tạo menu
-function initExclusiveHeadMenu() {
-  const exclusiveHeadItems = document.querySelectorAll(".exclusive-head li");
+// function initExclusiveHeadMenu() {
+//   const exclusiveHeadItems = document.querySelectorAll(".exclusive-head li");
 
-  exclusiveHeadItems.forEach((li) =>
-    li.addEventListener("click", () => {
-      exclusiveHeadItems.forEach((item) => item.classList.remove("active"));
-      li.classList.add("active");
-    })
-  );
-}
+//   exclusiveHeadItems.forEach((li) =>
+//     li.addEventListener("click", () => {
+//       exclusiveHeadItems.forEach((item) => item.classList.remove("active"));
+//       li.classList.add("active");
+//     })
+//   );
+// }
 
 // Hàm khởi tạo hàng sản phẩm
 function initProductRows() {
@@ -102,12 +116,12 @@ function initProductRows() {
     const btnLeft = row.querySelector(".btn-left-prd");
     const productsInView = 5;
     const gap = 10;
-    const productWidth = products[0].getBoundingClientRect().width;
-    const totalProducts = products.length;
     let currentIndex = 0;
-    const maxIndex = totalProducts - productsInView;
+    const maxIndex = Math.max(0, products.length - productsInView);
 
     const updateProductPosition = () => {
+      // Lấy lại width mỗi lần dịch chuyển để tránh lỗi khi ảnh chưa load xong
+      const productWidth = products[0].getBoundingClientRect().width;
       const totalShift = currentIndex * (productWidth + gap);
       products.forEach((product) => {
         product.style.transform = `translateX(-${totalShift}px)`;
@@ -116,19 +130,27 @@ function initProductRows() {
     };
 
     const updateButtonVisibility = () => {
-      btnLeft.style.display = currentIndex > 0 ? "block" : "none";
-      btnRight.style.display = currentIndex < maxIndex ? "block" : "none";
+      if (products.length <= productsInView) {
+        btnLeft.style.display = "none";
+        btnRight.style.display = "none";
+      } else {
+        btnLeft.style.display = currentIndex > 0 ? "block" : "none";
+        btnRight.style.display = currentIndex < maxIndex ? "block" : "none";
+      }
     };
 
-    btnRight.addEventListener("click", () => {
-      if (currentIndex < maxIndex) currentIndex++;
-      updateProductPosition();
-    });
-
-    btnLeft.addEventListener("click", () => {
-      if (currentIndex > 0) currentIndex--;
-      updateProductPosition();
-    });
+    if (btnRight) {
+      btnRight.addEventListener("click", () => {
+        if (currentIndex < maxIndex) currentIndex++;
+        updateProductPosition();
+      });
+    }
+    if (btnLeft) {
+      btnLeft.addEventListener("click", () => {
+        if (currentIndex > 0) currentIndex--;
+        updateProductPosition();
+      });
+    }
 
     updateProductPosition();
   });
@@ -174,25 +196,6 @@ function initAutoSlider() {
 }
 
 // Overplay effect cho menu
-document.querySelectorAll(".home-new-prd").forEach((section) => {
-  const tabs = section.querySelectorAll(".tab");
-  const productLists = section.querySelectorAll(".product-list");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      productLists.forEach((list) => list.classList.remove("active"));
-      const target = tab.getAttribute("data-target");
-      const activeProductList = section.querySelector(`#${target}`);
-      if (activeProductList) {
-        activeProductList.classList.add("active");
-      }
-    });
-  });
-});
-
 const overlay = document.querySelector(".overlay");
 const menuList = document.querySelectorAll(".menu ul li, .others ul .icon1");
 

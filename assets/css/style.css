@@ -159,7 +159,7 @@ ul li {
   margin-bottom: 20px;
 }
 
-.item-side-size .item-sub-title {
+.quick-search .item-side-size .item-sub-title {
   font-size: 13px !important;
   border: 1px solid #e7e8e9;
   border-radius: 8px 0px;
@@ -1067,9 +1067,7 @@ ul li {
   padding: 24px;
 }
 
-.header .sub-action-cart .top-action span {
-  padding-left: 2px;
-}
+
 
 .header .sub-action-cart .top-action .number-cart {
   position: absolute;
